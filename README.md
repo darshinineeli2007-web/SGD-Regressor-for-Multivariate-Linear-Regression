@@ -20,10 +20,34 @@ Program to implement the multivariate linear regression model for predicting the
 Developed by: 
 RegisterNumber:  
 */
+from sklearn.linear_model import SGDRegressor
+from sklearn.preprocessing import StandardScaler
+
+X = np.array([
+    [2, 80, 50],
+    [3, 60, 40],
+    [5, 90, 70],
+    [7, 85, 80],
+    [9, 95, 90]
+])
+y = np.array([50, 45, 70, 80, 95])
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+sgd_reg = SGDRegressor(max_iter=1000, learning_rate='invscaling', eta0=0.01, random_state=42)
+sgd_reg.fit(X_scaled, y)
+print("Weights (coefficients):", sgd_reg.coef_)
+print("Intercept:", sgd_reg.intercept_)
+
+y_pred = sgd_reg.predict(X_scaled)
+print("Predicted values:", y_pred)
+
 ```
 
 ## Output:
-![multivariate linear regression model for predicting the price of the house and number of occupants in the house](sam.png)
+<img width="562" height="60" alt="image" src="https://github.com/user-attachments/assets/30745c2b-619a-4315-98c5-babb3201c475" />
+
 
 
 ## Result:
