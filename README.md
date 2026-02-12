@@ -8,10 +8,11 @@ To write a program to predict the price of the house and number of occupants in 
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+1. Initialize the input feature matrix **X** and target variable **y**, then standardize the features using **StandardScaler**.
+2. Create an **SGDRegressor** model with appropriate learning parameters.
+3. Train the model using the scaled data (**fit the model**).
+4. Predict the output values using the trained model and display coefficients, intercept, and predicted values.
+
 
 ## Program:
 ```
